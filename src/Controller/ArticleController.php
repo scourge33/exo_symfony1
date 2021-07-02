@@ -1,10 +1,12 @@
 <?php
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ArticleController {
+class ArticleController extends AbstractController
+    {
     /**
      * @Route("/articles", name="article")
      */
@@ -42,11 +44,15 @@ class ArticleController {
         ];
 
         // déclaration de la variable article qui contient tous les articles défini par l'id
-        $article = $articles[$id];
+       // $article = $articles[$id];
 
         // renvoie de la réponse du titre de l'article dont l'id a été préciser dans l'url
-        return new Response($article['title']);
+        //return new Response($article['title']);
+
+        // renvoie le fichier article.html.twig
+        return $this->render('article.html.twig', ['article'=>$articles[$id]]);
     }
+
 
 
 
