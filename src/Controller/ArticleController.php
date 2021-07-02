@@ -13,9 +13,14 @@ class ArticleController {
         return new Response('mes articles');
     }
 
+    /**
+     * @Route("/articleshow/{id}", name="articleshow")
+     */
+    public function articleShow($id)
+    {
+        return new Response($id);
 
-
+    }
 
 }
 
-?>
