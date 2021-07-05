@@ -1,23 +1,12 @@
+<!-- déplacement du header dans un fichier à part relier grâce à include-->
+{% include '_header.html.twig' %}
 
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-
-    <title>Twig</title>
-</head>
-<body>
-    <header>
-        Bonjour
-    </header>
-
-    <main>
+<main>
         <!-- syntaxe "fait quelque chose" -->
         {% for article in articles %}
+            {% if article.published %}
+                {% endif %}
+
             <article>
                 <!-- syntaxe "affiche quelque chose"
                 + lien qui redirige vers l'article correspondant grâce à la fonction path et l'id de l'article -->
@@ -30,11 +19,5 @@
 
         {% endfor %}
     </main>
-
-   <footer>
-       Bye bye
-   </footer>
-
-</body>
-</html>
-
+<!-- déplacement du footer dans un fichier à part relier grâce à include-->
+{% include '_footer.html.twig' %}

@@ -1,20 +1,17 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Twig</title>
+<!-- rajout du header sur la page de l'article seul-->
+{% include '_header.html.twig' %}
 
-</head>
+
 <body>
-        <!-- page du lien vers 1 article  -->
+        <!-- page du lien vers un des articles  -->
             <article>
                 <h1>{{ article.title }}</h1>
                 <p>{{ article.content}} </p>
             </article>
 
-
 </body>
-</html>
+
+<!-- rajout du footer sur la page de l'article seul-->
+
+{% include '_footer.html.twig' %}
+
