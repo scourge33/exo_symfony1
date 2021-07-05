@@ -1,23 +1,27 @@
-<!-- déplacement du header dans un fichier à part relier grâce à include-->
-{% include '_header.html.twig' %}
+{# lien qui redirige vers le fichier qui contient les éléments communs à toutes les pages #}
+{% extends 'base.html.twig' %}
 
-<main>
-        <!-- syntaxe "fait quelque chose" -->
+{% block metaTitle %}
+    Header
+{% endblock metaTitle %}
+
+{% block main %}
+        {# syntaxe "fait quelque chose" #}
         {% for article in articles %}
             {% if article.published %}
                 {% endif %}
+                    <article>
+                        {# syntaxe "affiche quelque chose"
+                        + lien qui redirige vers l'article correspondant grâce à la fonction path et l'id de l'article -->#}
 
-            <article>
-                <!-- syntaxe "affiche quelque chose"
-                + lien qui redirige vers l'article correspondant grâce à la fonction path et l'id de l'article -->
-                <a href={{ path('articleshow', {'id' : article.id}) }}>
-                    <p>{{ article.title }}</p>
-                    <p>{{ article.content }}</p>
-                </a>
-
-            </article>
-
+                        <a href={{ path('articleshow', {'id' : article.id}) }}>
+                            <p>{{ article.title }}</p>
+                            <p>{{ article.content }}</p>
+                        </a>
+                    </article>
         {% endfor %}
-    </main>
-<!-- déplacement du footer dans un fichier à part relier grâce à include-->
-{% include '_footer.html.twig' %}
+{% endblock main %}
+
+ {% block footer %}
+        <p>Bonsoir</p>
+ {% endblock footer %}

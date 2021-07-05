@@ -21,6 +21,7 @@ main {
 }
 article {
     width: 45%;
+    height: 30%;
     text-align: center;
     margin: 20px 0;
     border: 5px dotted deepskyblue;
