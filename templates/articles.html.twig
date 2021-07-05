@@ -19,9 +19,13 @@
         <!-- syntaxe "fait quelque chose" -->
         {% for article in articles %}
             <article>
-                <!-- syntaxe "affiche quelque chose" -->
-                <p>{{ article.title }}</p>
-                <p>{{ article.content }}</p>
+                <!-- syntaxe "affiche quelque chose"
+                + lien qui redirige vers l'article correspondant grâce à la fonction path et l'id de l'article -->
+                <a href={{ path('articleshow', {'id' : article.id}) }}>
+                    <p>{{ article.title }}</p>
+                    <p>{{ article.content }}</p>
+                </a>
+
             </article>
 
         {% endfor %}
